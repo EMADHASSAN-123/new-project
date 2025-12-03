@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقال إخباري - مركز الشفاء</title>
+    <meta name="description" content="مقال إخباري من مركز الشفاء لتعليم القرآن الكريم">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .article-content {
+            line-height: 2;
+            font-size: 1.125rem;
+            color: #374151;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+        
+        .article-content h2, .article-content h3 {
+            color: #92400e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-amber-50">
+    <!-- Navigation -->
+    <nav class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span class="text-2xl font-bold">مركز الشفاء لتعليم القرآن</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="index.html" class="hover:text-amber-200 transition">الرئيسية</a>
+                    <a href="about.html" class="hover:text-amber-200 transition">عن المركز</a>
+                    <a href="courses.html" class="hover:text-amber-200 transition">المواد التعليمية</a>
+                    <a href="services.html" class="hover:text-amber-200 transition">الخدمات والبرامج</a>
+                    <a href="achievements.html" class="hover:text-amber-200 transition">الإنجازات</a>
+                    <a href="gallery.html" class="hover:text-amber-200 transition">المعرض</a>
+                    <a href="contact.html" class="hover:text-amber-200 transition">التواصل</a>
+                </div>
+                <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block py-2 hover:bg-amber-800">الرئيسية</a>
+                <a href="about.html" class="block py-2 hover:bg-amber-800">عن المركز</a>
+                <a href="courses.html" class="block py-2 hover:bg-amber-800">المواد التعليمية</a>
+                <a href="services.html" class="block py-2 hover:bg-amber-800">الخدمات والبرامج</a>
+                <a href="achievements.html" class="block py-2 hover:bg-amber-800">الإنجازات</a>
+                <a href="gallery.html" class="block py-2 hover:bg-amber-800">المعرض</a>
+                <a href="contact.html" class="block py-2 hover:bg-amber-800">التواصل</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Loading State -->
+            <div id="loadingState" class="text-center py-20">
+                <i class="fas fa-spinner fa-spin text-5xl text-amber-700 mb-4"></i>
+                <p class="text-gray-600 text-xl">جاري تحميل المقال...</p>
+            </div>
+
+            <!-- Article Container -->
+            <article id="articleContainer" class="hidden">
+                <!-- Breadcrumb -->
+                <nav class="mb-6 text-sm">
+                    <a href="index.html" class="text-amber-700 hover:text-amber-900">الرئيسية</a>
+                    <span class="mx-2 text-gray-500">/</span>
+                    <a href="index.html#news" class="text-amber-700 hover:text-amber-900">الأخبار</a>
+                    <span class="mx-2 text-gray-500">/</span>
+                    <span class="text-gray-600" id="articleTitleBreadcrumb">المقال</span>
+                </nav>
+
+                <!-- Article Header -->
+                <header class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <h1 class="text-4xl font-bold text-amber-900 mb-4" id="articleTitle"></h1>
+                    <div class="flex items-center space-x-4 space-x-reverse text-gray-600 mb-6">
+                        <span id="articleDate"></span>
+                        <span class="text-amber-700">•</span>
+                        <span id="articleCategory">مقال إخباري</span>
+                    </div>
+                    <div id="articleImage" class="mb-6"></div>
+                </header>
+
+                <!-- Article Body -->
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <div class="article-content" id="articleContent"></div>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorState" class="hidden text-center py-20">
+                    <i class="fas fa-exclamation-triangle text-5xl text-red-500 mb-4"></i>
+                    <p class="text-gray-600 text-xl mb-4">لم يتم العثور على المقال</p>
+                    <a href="index.html" class="text-amber-700 hover:text-amber-900 underline">العودة إلى الصفحة الرئيسية</a>
+                </div>
+            </article>
+
+            <!-- Sidebar with Related Posts -->
+            <aside class="mt-12">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Related Posts -->
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold text-amber-900 mb-6">مقالات ذات صلة</h2>
+                        <div id="relatedPosts" class="space-y-6">
+                            <div class="text-center py-8">
+                                <i class="fas fa-spinner fa-spin text-3xl text-amber-700 mb-4"></i>
+                                <p class="text-gray-600">جاري التحميل...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-amber-900 mb-6">آخر الأخبار</h2>
+                        <div id="recentPosts" class="space-y-4">
+                            <div class="text-center py-8">
+                                <i class="fas fa-spinner fa-spin text-3xl text-amber-700 mb-4"></i>
+                                <p class="text-gray-600 text-sm">جاري التحميل...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">مركز الشفاء</h3>
+                    <p class="text-amber-200">نور القرآن يضيء قلوبنا ويهدي خطانا</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-amber-200 hover:text-white transition">عن المركز</a></li>
+                        <li><a href="courses.html" class="text-amber-200 hover:text-white transition">المواد
+                                التعليمية</a></li>
+                        <li><a href="services.html" class="text-amber-200 hover:text-white transition">الخدمات</a></li>
+                        <li><a href="contact.html" class="text-amber-200 hover:text-white transition">التواصل</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">معلومات التواصل</h4>
+                    <ul class="space-y-2 text-amber-200">
+                        <li><i class="fas fa-phone ml-2"></i> +966 55 327 3660</li>
+                        <li><i class="fas fa-envelope ml-2"></i> alshifacenter874@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> اليمن-تعز -جبل حبشي</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">تابعنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <!-- <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-twitter"></i></a> -->
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com/channel/UC_4oT1OEXRwHF2gooTDH1cA?si=6RoJzfLBDA1o37T7" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200">
+                <p>&copy; 2025 مركز الشفاء لتعليم القرآن الكريم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-content.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/news-article.js"></script>
+</body>
+
+</html>
+
