@@ -1,0 +1,25 @@
+# robots.txt for مركز الشفاء لتعليم القرآن الكريم
+# Al-Shifa Center for Quran Education
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /js/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /index.html
+Allow: /about.html
+Allow: /courses.html
+Allow: /services.html
+Allow: /achievements.html
+Allow: /gallery.html
+Allow: /contact.html
+Allow: /faq.html
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
+
