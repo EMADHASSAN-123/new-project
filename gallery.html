@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المعرض - مركز الشفاء لتعليم القرآن</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Navigation -->
+     <header class="mb-12" >
+    <nav class="bg-amber-900 text-white shadow-lg fixed top-0 mb-4 z-50 w-full" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <img src="logonew.png" alt="شعار مركز الشفاء" height="50" width="50">
+                    <span class="text-2xl font-bold">مركز الشفاء لتعليم القرآن</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="index.html" class="hover:text-amber-200 transition">الرئيسية</a>
+                    <a href="about.html" class="hover:text-amber-200 transition">عن المركز</a>
+                    <a href="courses.html" class="hover:text-amber-200 transition">المواد التعليمية</a>
+                    <a href="services.html" class="hover:text-amber-200 transition">الخدمات والبرامج</a>
+                    <a href="achievements.html" class="hover:text-amber-200 transition">الإنجازات</a>
+                    <a href="gallery.html" class="hover:text-amber-200 transition">المعرض</a>
+                    <a href="contact.html" class="hover:text-amber-200 transition">التواصل</a>
+                    <a href="admin/dashboard.html"
+                        class="bg-amber-700 px-4 py-2 rounded hover:bg-amber-600 transition">لوحة التحكم</a>
+                </div>
+                <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden pb-4" id="mobileMenu">
+                <a href="index.html" class="block py-2 hover:text-amber-200">الرئيسية</a>
+                <a href="about.html" class="block py-2 hover:text-amber-200">عن المركز</a>
+                <a href="courses.html" class="block py-2 hover:text-amber-200">المواد التعليمية</a>
+                <a href="services.html" class="block py-2 hover:text-amber-200">الخدمات والبرامج</a>
+                <a href="achievements.html" class="block py-2 hover:text-amber-200">الإنجازات</a>
+                <a href="gallery.html" class="block py-2 hover:text-amber-200">المعرض</a>
+                <a href="contact.html" class="block py-2 hover:text-amber-200">التواصل</a>
+                <a href="admin/dashboard.html" class="block py-2 bg-amber-700 rounded mt-2 text-center">لوحة التحكم</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-b from-amber-900 to-amber-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">المعرض</h1>
+            <p class="text-xl text-amber-100">صور وفيديوهات وتلاوات من المركز</p>
+        </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-4 space-x-reverse border-b">
+                <button class="px-6 py-3 font-semibold text-amber-900 border-b-2 border-amber-700 tab-btn active" data-tab="photos">
+                    <i class="fas fa-images ml-2"></i> الصور
+                </button>
+                <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 tab-btn" data-tab="videos">
+                    <i class="fas fa-video ml-2"></i> الفيديوهات
+                </button>
+                <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 tab-btn" data-tab="audio">
+                    <i class="fas fa-headphones ml-2"></i> التلاوات
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="tab-content py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">معرض الصور</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4" id="photosGrid">
+                <div class="col-span-full text-center py-12">
+                    <i class="fas fa-spinner fa-spin text-4xl text-amber-700 mb-4"></i>
+                    <p class="text-gray-600">جاري تحميل الصور...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="tab-content py-16 bg-amber-50 hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">الفيديوهات</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" id="videosGrid">
+                <div class="col-span-full text-center py-12">
+                    <i class="fas fa-spinner fa-spin text-4xl text-amber-700 mb-4"></i>
+                    <p class="text-gray-600">جاري تحميل الفيديوهات...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section id="audio" class="tab-content py-16 bg-amber-50 hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">تلاوات الطلاب</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" id="audioGrid">
+                <div class="col-span-full text-center py-12">
+                    <i class="fas fa-spinner fa-spin text-4xl text-amber-700 mb-4"></i>
+                    <p class="text-gray-600">جاري تحميل التلاوات...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer class="bg-amber-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">مركز الشفاء</h3>
+                    <p class="text-amber-200">نور القرآن يضيء قلوبنا ويهدي خطانا</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-amber-200 hover:text-white transition">عن المركز</a></li>
+                        <li><a href="courses.html" class="text-amber-200 hover:text-white transition">المواد
+                                التعليمية</a></li>
+                        <li><a href="services.html" class="text-amber-200 hover:text-white transition">الخدمات</a></li>
+                        <li><a href="contact.html" class="text-amber-200 hover:text-white transition">التواصل</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">معلومات التواصل</h4>
+                    <ul class="space-y-2 text-amber-200">
+                        <li><i class="fas fa-phone ml-2"></i> +966 55 327 3660</li>
+                        <li><i class="fas fa-envelope ml-2"></i> alshifacenter874@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> اليمن-تعز -جبل حبشي</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">تابعنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <!-- <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-twitter"></i></a> -->
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com/channel/UC_4oT1OEXRwHF2gooTDH1cA?si=6RoJzfLBDA1o37T7" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200">
+                <p>&copy; 2025 مركز الشفاء لتعليم القرآن الكريم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/supabase-content.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
+
