@@ -64,7 +64,7 @@ const SEO_CONFIG = {
     
     // Default Meta Tags
     defaultMeta: {
-        keywords: 'تعليم القرآن, حفظ القرآن, تلاوة القرآن, تجويد, مركز تعليمي, القرآن الكريم, جبل حبشي, اليمن, حلقات تحفيظ, دورات تجويد',
+        keywords: 'تعليم القرآن, حفظ القرآن, مركز الشفاء لتعليم القران ,تلاوة القرآن, تجويد, مركز تعليمي, القرآن الكريم, جبل حبشي, اليمن, حلقات تحفيظ, دورات تجويد',
         keywordsEn: 'Quran education, Quran memorization, Quran recitation, Tajweed, educational center, Holy Quran, Jabal Habashi, Yemen, memorization circles, Tajweed courses',
         author: 'مركز الشفاء لتعليم القرآن الكريم',
         language: 'ar',

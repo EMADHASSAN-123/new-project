@@ -37,7 +37,7 @@ async function loadHomePageContent() {
 /**
  * Load news section
  * تحميل قسم الأخبار
- */
+ */ 
 async function loadNews() {
     const result = await getPublicContent('news', 3);
     const newsSection = document.getElementById('newsSection');
