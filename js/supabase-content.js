@@ -7,7 +7,7 @@
 // This file is intended to be loaded as a normal script (not an ES module)
 // so its functions are available globally to other non-module scripts.
 
-let supabase = null;
+
 
 function initContentSupabase() {
     // Try to get the client from window

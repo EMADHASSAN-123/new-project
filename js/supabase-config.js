@@ -6,11 +6,11 @@
 // Supabase Configuration - Loaded from config.js
 // تأكد من تحميل config.js قبل هذا الملف في HTML
 // Make sure config.js is loaded before this file in HTML
-
+ 
 // استخدام القيم من config.js إذا كانت متوفرة، وإلا استخدام القيم الافتراضية
 // Use values from config.js if available, otherwise use default values
-window.SUPABASE_URL = window.ENV_CONFIG?.SUPABASE_URL || "YOUR_SUPABASE_URL_HERE";
-window.SUPABASE_ANON_KEY = window.ENV_CONFIG?.SUPABASE_ANON_KEY || "YOUR_SUPABASE_ANON_KEY_HERE";
+window.SUPABASE_URL = window.ENV_CONFIG?.SUPABASE_URL || "https://ekukkefoxhivlwgzlike.supabase.co";
+window.SUPABASE_ANON_KEY = window.ENV_CONFIG?.SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrdWtrZWZveGhpdmx3Z3psaWtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM1MDA3MjMsImV4cCI6MjA3OTA3NjcyM30.rbzFxfnz72mgEoq7DEUvr3Dx1E2i3JPEtf4rpemmzVk";
 
 // التحقق من وجود القيم المطلوبة
 // Verify required values are present
